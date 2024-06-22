@@ -1,0 +1,42 @@
+/* Navigation.css */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #001f3f; /* Navy blue */
+    color: white;
+  }
+  
+  .nav__brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5rem;
+  }
+  
+  .nav__buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__connect, .nav__logout {
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .nav__connect:hover, .nav__logout:hover {
+    background-color: #005f8a;
+  }
+  

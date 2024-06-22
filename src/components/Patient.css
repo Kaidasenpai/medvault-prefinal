@@ -1,0 +1,37 @@
+/* Patient.css */
+.patient-page {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .patient-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+  }
+  
+  .patient-card-img {
+    width: 150px;
+    height: 150px;
+    margin-right: 2rem;
+    border-radius: 50%;
+  }
+  
+  .patient-card-info {
+    text-align: left;
+  }
+  
+  .patient-card-info h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .patient-card-info p {
+    margin: 0.5rem 0;
+  }
+  

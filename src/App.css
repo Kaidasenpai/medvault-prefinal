@@ -1,0 +1,71 @@
+/* App.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: #0077b6;
+    color: white;
+    padding: 1rem;
+  }
+  
+  .nav__brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav__brand h1 {
+    font-size: 2.5rem; /* Increase the size of the MedVault text */
+    margin: 0;
+  }
+  
+  .nav__links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav__links li {
+    margin: 0 1rem;
+  }
+  
+  .nav__links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav__links li a:hover {
+    color: #ff9900;
+  }
+  
+  .nav__search {
+    margin-left: 20px;
+  }
+  
+  .nav__buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__connect,
+  .nav__logout {
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: #001f3f; /* Dark navy blue for both buttons */
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .nav__connect:hover,
+  .nav__logout:hover {
+    background-color: #000a1c; /* Darker shade on hover for both buttons */
+  }
+  

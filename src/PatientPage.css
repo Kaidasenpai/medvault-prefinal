@@ -1,0 +1,44 @@
+/* PatientPage.css */
+.patient-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+  }
+  
+  .patient-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .patient-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .patient-card-img {
+    width: 100px;
+    height: auto;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  
+  .patient-card-info {
+    font-size: 0.875rem;
+  }
+  
+  .modal-main {
+    width: 80%;
+    max-width: 500px;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+  }
+  
