@@ -33,18 +33,21 @@ describe("MedVaultRecords contract", function () {
     const name = "James Bond";
     const gender = "Male";
     const dateOfBirth = "1/1/1950";
+    const bloodtype = "O+";
     const imageUrl = "https://images.immediate.co.uk/production/volatile/sites/3/2021/09/daniel-craig-007.jpg-303a730.png";
     const medicalHistory = "James Bond's Medical History ...";
     const treatmentHistory = "James Bond's Treatment History ...";
+    
 
     it("Should register a new patient", async () => {
-      transaction = await medVaultRecords.registerPatient(id, name, gender, dateOfBirth, imageUrl, medicalHistory, treatmentHistory);
+      transaction = await medVaultRecords.registerPatient(id, name, gender, dateOfBirth, bloodtype, imageUrl, medicalHistory, treatmentHistory);
 
       const patient = await medVaultRecords.patients(id);
       expect(patient.id).to.equal(id);
       expect(patient.name).to.equal(name);
       expect(patient.gender).to.equal(gender);
       expect(patient.dateOfBirth).to.equal(dateOfBirth);
+      expect(patient.bloodtype).to.equal(bloodtype);
       expect(patient.imageUrl).to.equal(imageUrl);
       expect(patient.medicalHistory).to.equal(medicalHistory);
       expect(patient.treatmentHistory).to.equal(treatmentHistory);

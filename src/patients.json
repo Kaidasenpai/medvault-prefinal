@@ -8,7 +8,7 @@
     "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww",
     "medicalHistory": "No major illnesses.",
     "treatmentHistory": "Regular check-ups.",
-    "patientAddress": "0x123456789abcdef"
+    "patientAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
   },
   {
     "id": "002",
@@ -19,7 +19,7 @@
     "imageUrl": "https://media.istockphoto.com/id/615279718/photo/businesswoman-portrait-on-white.jpg?s=612x612&w=0&k=20&c=Aa2Vy4faAPe9fAE68Z01jej9YqPqy-RbAteIlF3wcjk=",
     "medicalHistory": "Diabetic.",
     "treatmentHistory": "Insulin treatment.",
-    "patientAddress": "0xabcdef123456789"
+    "patientAddress": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
   },
   {
     "id": "003",
@@ -30,7 +30,7 @@
     "imageUrl": "https://t3.ftcdn.net/jpg/04/18/13/92/360_F_418139265_COA2l5jcOW4gF2k0w5NDQVvLnGPwsTcv.jpg",
     "medicalHistory": "Hypertension.",
     "treatmentHistory": "Blood pressure medication.",
-    "patientAddress": "0x789abcdef123456"
+    "patientAddress": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
   },
   {
     "id": "004",
@@ -41,7 +41,7 @@
     "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww",
     "medicalHistory": "Asthma.",
     "treatmentHistory": "Inhaler treatment.",
-    "patientAddress": "0x456123789abcdef"
+    "patientAddress": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
   },
   {
     "id": "005",
@@ -52,7 +52,7 @@
     "imageUrl": "https://www.shutterstock.com/image-photo/id-photo-portrait-handsome-mature-260nw-1592137060.jpg",
     "medicalHistory": "Allergies.",
     "treatmentHistory": "Antihistamines.",
-    "patientAddress": "0x654789abcdef123"
+    "patientAddress": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65"
   },
   {
     "id": "006",
@@ -63,7 +63,7 @@
     "imageUrl": "https://media.istockphoto.com/id/1691969118/photo/smiling-beautiful-woman-on-white-background-passport-photo.jpg?s=612x612&w=0&k=20&c=sUSZogJiUCOjYSB1sD_dXhsRgstqOGDsEGpsq63N2jY=",
     "medicalHistory": "Thyroid issues.",
     "treatmentHistory": "Thyroid hormone replacement.",
-    "patientAddress": "0x321456789abcdef"
+    "patientAddress": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
   },
   {
     "id": "007",
@@ -74,7 +74,7 @@
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Frank-Walter_Steinmeier_at_Brazil.jpg/800px-Frank-Walter_Steinmeier_at_Brazil.jpg",
     "medicalHistory": "Heart disease.",
     "treatmentHistory": "Cardiac surgery.",
-    "patientAddress": "0x987654321abcdef"
+    "patientAddress": "0x976EA74026E726554dB657fA54763abd0C3a0aa9"
   },
   {
     "id": "008",
@@ -85,7 +85,7 @@
     "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC2k_mRTtn4ZCuaCWY1crj3V_Of6VE3VmsOA&s",
     "medicalHistory": "Cancer survivor.",
     "treatmentHistory": "Chemotherapy.",
-    "patientAddress": "0xabcdef987654321"
+    "patientAddress": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720"
   },
   {
     "id": "009",
@@ -96,6 +96,6 @@
     "imageUrl": "https://img.freepik.com/free-photo/portrait-fair-haired-woman-with-warm-blue-eyes-dry-lips-healthy-skin-looking-directly-alluring-girl-with-beautiful-appearance-dressed-casually-posing_273609-7635.jpg",
     "medicalHistory": "Cancer survivor.",
     "treatmentHistory": "Chemotherapy.",
-    "patientAddress": "0xabcdef987654301"
+    "patientAddress": "0xBcd4042DE499D14e55001CcbB24a551F3b954096"
   }
 ]

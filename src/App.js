@@ -21,7 +21,7 @@ const registeredPatients = [
     "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww",
     "medicalHistory": "No major illnesses.",
     "treatmentHistory": "Regular check-ups.",
-    "patientAddress": "0x123456789abcdef"
+    "patientAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
   },
   {
     "id": "002",

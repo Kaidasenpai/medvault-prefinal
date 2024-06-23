@@ -1,6 +1,12 @@
-// scripts/deploy.js
 const { ethers } = require("hardhat");
-const { patients } = require("../src/patients.json");
+let patientsData;
+
+try {
+  patientsData = require("../src/patients.json");
+} catch (error) {
+  console.error("Failed to load patients.json:", error);
+  process.exit(1);
+}
 
 async function main() {
   const [deployer] = await ethers.getSigners();
@@ -13,20 +19,27 @@ async function main() {
 
   console.log(`Deployed MedVaultRecords Contract at: ${medVaultRecords.address}\n`);
 
-  for (let i = 0; i < patients.length; i++) {
+  const patients = patientsData;
+
+  if (!Array.isArray(patients) || patients.length === 0) {
+    throw new Error("No patients found in the JSON file");
+  }
+
+  for (const patient of patients) {
     const transaction = await medVaultRecords.connect(deployer).registerPatient(
-      patients[i].id,
-      patients[i].name,
-      patients[i].gender,
-      patients[i].dateOfBirth,
-      patients[i].bloodType,
-      patients[i].imageUrl,
-      patients[i].medicalHistory,
-      patients[i].treatmentHistory
+      parseInt(patient.id, 10),
+      patient.name,
+      patient.gender,
+      patient.dateOfBirth,
+      patient.bloodType,
+      patient.imageUrl,
+      patient.medicalHistory,
+      patient.treatmentHistory,
+      patient.patientAddress
     );
 
     await transaction.wait();
-    console.log(`Registered patient ${patients[i].id}: ${patients[i].name}`);
+    console.log(`Registered patient ${patient.id}: ${patient.name}`);
   }
 }
 

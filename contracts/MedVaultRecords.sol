@@ -3,10 +3,11 @@ pragma solidity ^0.8.4;
 
 contract MedVaultRecords {
     address public owner;
-
+    uint256 public patientCount = 0;
+    
     // Struct to store patient information
     struct Patient {
-        string id;
+        uint256 id;
         string name;
         string gender;
         string dateOfBirth;
@@ -14,10 +15,11 @@ contract MedVaultRecords {
         string imageUrl;
         string medicalHistory;
         string treatmentHistory;
+        address patientAddress;
     }
 
     // Mapping to store patients
-    mapping(string => Patient) public patients;
+    mapping(uint256 => Patient) public patients;
 
     // Mapping to store addresses of doctors
     mapping(address => bool) public doctors;
@@ -25,10 +27,10 @@ contract MedVaultRecords {
     // Mapping to store addresses of admins
     mapping(address => bool) public admins;
 
-    event PatientRegistered(string id, string patientName);
+    event PatientRegistered(uint256 indexed id, string name);
     event DoctorAdded(address doctor);
     event AdminAdded(address admin);
-    event MedicalHistoryUpdated(string id, string updatedHistory);
+    event MedicalHistoryUpdated(uint256 id, string updatedHistory);
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can perform this action");
@@ -45,22 +47,54 @@ contract MedVaultRecords {
         _;
     }
 
-    modifier onlyPatient(string memory id) {
-        require(keccak256(abi.encodePacked(patients[id].id)) == keccak256(abi.encodePacked(id)), "Only patient can view their medical history");
+    modifier onlyPatient(uint256 id) {
+        require(patients[id].patientAddress == msg.sender, "Only patient can view their medical history");
         _;
     }
 
     constructor() {
         owner = msg.sender;
+        admins[msg.sender] = true; // Set the deployer as the initial admin
     }
 
     // Function to register a new patient (by admin)
-    function registerPatient(string memory id, string memory name, string memory gender, string memory dateOfBirth, string memory bloodType, string memory imageUrl, string memory medicalHistory, string memory treatmentHistory) public onlyAdmin {
-        Patient memory patient = Patient(id, name, gender, dateOfBirth, bloodType, imageUrl, medicalHistory, treatmentHistory);
+    function registerPatient(
+        uint256 id,
+        string memory name, 
+        string memory gender, 
+        string memory dateOfBirth, 
+        string memory bloodType, 
+        string memory imageUrl, 
+        string memory medicalHistory, 
+        string memory treatmentHistory,
+        address patientAddress
+        ) public onlyAdmin {
+
+        Patient memory patient = Patient(
+            id, 
+            name, 
+            gender, 
+            dateOfBirth, 
+            bloodType, 
+            imageUrl, 
+            medicalHistory, 
+            treatmentHistory,
+            patientAddress
+        );
         patients[id] = patient;
 
         // Emit registration event
         emit PatientRegistered(id, name);
+    }
+
+
+    function getPatientByAddress(address patientAddress) public view returns (Patient memory) {
+        for (uint256 i = 1; i <= patientCount; i++) { // Assuming you have a patientCount variable
+            if (patients[i].patientAddress == patientAddress) {
+                return patients[i];
+            }
+        }
+        revert("Patient not found");
     }
 
     // Function to add a new doctor
@@ -80,8 +114,8 @@ contract MedVaultRecords {
     }
 
     // Function to update medical history (only by doctors)
-    function updateMedicalHistory(string memory id, string memory newMedicalHistory) public onlyDoctor {
-        require(bytes(patients[id].id).length != 0, "Patient not found");
+    function updateMedicalHistory(uint256 id, string memory newMedicalHistory) public onlyDoctor {
+        require(patients[id].id != 0, "Patient not found");
         patients[id].medicalHistory = newMedicalHistory;
 
         // Emit medical history updated event
@@ -89,8 +123,8 @@ contract MedVaultRecords {
     }
 
     // Function for a patient to view their medical history
-    function viewMedicalHistory(string memory id) public view onlyPatient(id) returns (string memory) {
-        require(bytes(patients[id].id).length != 0, "Patient not found");
+    function viewMedicalHistory(uint256 id) public view onlyPatient(id) returns (string memory) {
+        require(patients[id].id != 0, "Patient not found");
         return patients[id].medicalHistory;
     }
 }
